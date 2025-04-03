@@ -1,0 +1,1 @@
+from praktikum.ingredient import Ingredient
