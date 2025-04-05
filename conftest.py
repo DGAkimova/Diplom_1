@@ -12,3 +12,10 @@ def mock_ingridients():
     mock_ingredients.name = ''.join(random.choice(letters) for i in range(10))
     mock_ingredients.price = 25
     return mock_ingredients
+
+@pytest.fixture()
+def mock_bun():
+    mock_bun = Mock()
+    mock_bun.name = 'Классическая'
+    mock_bun.price = 100
+    return mock_bun

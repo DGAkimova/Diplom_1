@@ -28,3 +28,10 @@ class TestBurger:
         assert burger_1 == burger.ingredients[1]
         assert burger_2 == burger.ingredients[0]
 
+    def test_get_price(self,mock_bun,mock_ingridients):
+        burger = Burger()
+        burger.add_ingredient(mock_ingridients)
+        burger.set_buns(mock_bun)
+        mock_bun.get_price.return_value = 100
+        mock_ingridients.get_price.return_value = 50
+        assert burger.get_price() == 250
